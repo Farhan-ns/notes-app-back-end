@@ -127,10 +127,21 @@ const deleteNoteByIdHandler = (request, h) => {
   return response;
 };
 
+ const welcome = (request, h) => {
+  const response = h.response({
+    status: 'success',
+    message: 'Welcome to Notes API!',
+  });
+
+  response.code(200);
+  return response;
+ }
+
 module.exports = {
   addNoteHandler,
   getAllNotesHandler,
   getNoteByIdHandler,
   editNoteByIdHandler,
   deleteNoteByIdHandler,
+  welcome
 };
